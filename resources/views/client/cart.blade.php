@@ -60,9 +60,10 @@
                                             {{-- <div class="cart-item__quantity cart--flex2 quantity"> --}}
                                                 <input type="hidden" value="{{$v_content->rowId}}" name="rowId_cart" class="form-control">
                                                 {{-- <button class="quantify-down cart-item__down cart-item__btn">-</button> --}}
-                                                <input class="cart_quantity_input" type="number" max="5" min="1" name="cart_quantity" value="{{$v_content->qty}}">
+                                                <input class="cart_quantity_input" type="number" max="5" min="1" name="cart_quantity" value="{{$v_content->qty}}" >
                                                 {{-- <button class="quantify-up cart-item__up cart-item__btn">cập nhật</button> --}}
-                                                <input type="submit" value="Cập nhật" name="update_qty" class="cart-item__update">
+                                                <input type="submit" value="Cập nhật" name="update_qty" class="cart-item__update"/>
+                                                
                                             {{-- </div>  --}}
                                         </form>
                                             <p class="cart-item__total cart--flex2"><?php
@@ -107,28 +108,15 @@
                             </div>
                            
                             @guest('customer')
-                            @if (Route::has('payment') )
-                           
-                            <div class="cart__box">
-                               
-                            </div>
-                            @endif
+                                <div class="cart__box">
+                                    <a href="{{URL::to('/signInSignUp')}}"><button class="cart__button disabled">Đăng nhập</button></a>
+                                </div>
                             @else
-                            <?php if(Cart::count()>0){
-
-                            ?>
-                            <div class="cart__box">
-                                <a href="{{URL::to('/payment')}}"><button class="cart__button">Mua hàng</button></a>
-                            </div>
-                            
-                            <?php }else{
-                                ?>
-                               
-                                    <p class="cart__attribute cart--flex2">Chọn sản phẩm</p>
-                               
-                                <?php
-                            }
-                            ?>
+                                <?php if(Cart::count()>0){?>
+                                    <div class="cart__box">
+                                        <a href="{{URL::to('/payment')}}"><button class="cart__button">Mua hàng</button></a>
+                                    </div>
+                                <?php } ?>
                             @endguest
                         </div>
                     </div>

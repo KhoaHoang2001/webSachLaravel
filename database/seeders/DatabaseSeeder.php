@@ -61,14 +61,20 @@ class DatabaseSeeder extends Seeder
                 'brand_status' => 1,
             ],
             [
-                'brand_name' => 'Nhà xuất bản Trẻ',
-                'brand_content' => 'Nhà xuất bản Trẻ là một đơn vị chuyên xuất bản và phát hành sách nhiều thể loại có trụ sở chính tại Thành phố Hồ Chí Minh.',
+                'brand_name' => 'Nhà xuất bản Thanh niên',
+                'brand_content' => 'Nhà xuất bản Thanh niên là một đơn vị chuyên xuất bản và phát hành sách nhiều thể loại có trụ sở chính tại Thành phố Hồ Chí Minh.',
                 'brand_logo' => '1 (3).jpg',
                 'brand_status' => 1,
             ],
             [
                 'brand_name' => 'Nhà xuất bản Giáo dục Việt Nam',
-                'brand_content' => 'Nhà xuất bản Trẻ là một đơn vị chuyên xuất bản và phát hành sách nhiều thể loại có trụ sở chính tại Thành phố Hồ Chí Minh. ',
+                'brand_content' => 'Nhà xuất bản Giáo dục Việt Nam là một đơn vị chuyên xuất bản và phát hành sách nhiều thể loại có trụ sở chính tại Thành phố Hồ Chí Minh. ',
+                'brand_logo' => '1 (3).jpg',
+                'brand_status' => 1,
+            ],
+            [
+                'brand_name' => 'Nhà xuất bản Lao động',
+                'brand_content' => 'Nhà xuất bản Lao động là một đơn vị chuyên xuất bản và phát hành sách nhiều thể loại có trụ sở chính tại Thành phố Hồ Chí Minh. ',
                 'brand_logo' => '1 (3).jpg',
                 'brand_status' => 1,
             ]

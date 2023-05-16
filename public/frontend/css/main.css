@@ -288,10 +288,11 @@
 .header-dropdown__item{
     display: flex;
     align-items: center;
-    height: 46px;
-    width: 278px;
+    min-height: 46px;
+    min-width: 320px;
     background-color: white;
     text-decoration: none;
+    padding: 10px 0px;
 }
 
 .header-dropdown__item:hover .header-dropdown__link-box__title{

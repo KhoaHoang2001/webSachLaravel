@@ -103,7 +103,8 @@ Route::middleware(['auth:customer'])->group(function () {
 
     Route::get('/accountPasswordChange/{customer_id}', [ClientAccountController::class, 'passwordChange']);
     Route::get('/accountInfo/{customer_id}', [ClientAccountController::class, 'index']);
-    Route::get('/savechange', [ClientAccountController::class, 'savechange']);
+    // Route::get('/savechange', [ClientAccountController::class, 'savechange']);
+    Route::post('/savechange', [ClientAccountController::class, 'savechange']);
     Route::get('/logout-customer', [ClientSigningController::class, 'logoutcustomer']);
     Route::post('/savechangepassword', [ClientAccountController::class, 'savechangepassword']);
     //Thông báo thanh toán thành công

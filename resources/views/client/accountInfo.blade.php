@@ -35,7 +35,9 @@
                             <h2 class="account__title">Hồ sơ của tôi</h2>
                             
 
-                            <form action="{{URL::to('/savechange')}}" class="account__form">
+                            <form method="POST" action="{{URL::to('/savechange')}}" class="account__form" enctype="multipart/form-data">
+                            {{-- <form class="row g-3" style="padding:20px 20px;" method="POST" action="{{route('admin.store')}}" enctype="multipart/form-data"> --}}
+
                                 @csrf
                                 <div class="account__info">
                                     <input type="hidden" value="{{$customer->customer_id}}" name="customer_id">
@@ -69,10 +71,12 @@
                                 </div>
                                 <div class="account__avatar">
                                     <div class="account-avatar__avtbox">
-                                        <img class = "avatar" style="vertical-align: middle;width: 160px;height: 160px; border-radius: 50%;"src="{{asset('/frontend/img/account/')}}/{{$customer->customer_avatar}}" alt="{{$customer->customer_avatar}}">
-                                        
-                                        <input type="file" name="avatar" value="{{$customer->customer_avatar}}" aria-label="File browser example" class="account-avatar__input" >   
-
+                                        @if($customer->customer_avatar == '1')
+                                            <img class = "avatar" style="vertical-align: middle;width: 160px;height: 160px; border-radius: 50%;"src="{{asset('/frontend/img/account/')}}/default-avatar.png" alt="default avatar">
+                                        @else
+                                            <img class = "avatar" style="vertical-align: middle;width: 160px;height: 160px; border-radius: 50%;"src="{{asset('/frontend/img/account/')}}/{{$customer->customer_avatar}}" alt="{{$customer->customer_avatar}}">
+                                        @endif
+                                        <input type="file" name="account_avatar" value="{{$customer->customer_avatar}}" aria-label="File browser example" class="account-avatar__input" >   
                                     </div>
                                 </div>
                             </form>

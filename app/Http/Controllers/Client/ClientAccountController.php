@@ -43,26 +43,21 @@ class ClientAccountController extends Controller
     }
     public function savechange(Request $request)
     {
-
+        // alert($request->account_avatar);
         $cus = Customer::find($request->customer_id);
-        if ($request->file('avatar') != null) {
-            $file = $request->file('avatar');
-            $filename = $file->getClientOriginalName('avatar');
-            $file->move('backend/assets/img/avatars', $filename);
-            $cus->customer_avatar = $filename;
+        if ($request->hasFile('account_avatar')) {
+            // alert('alo');
+            $file = $request->file('account_avatar');
+            $filename = $file->getClientOriginalName('account_avatar');
+            // $filename = $request->account_avatar;
+            $file->move('frontend/img/account', $filename);
+            $cus->customer_avatar = '' . $filename;;
         }
 
         $cus->customer_name = $request->customer_name;
         $cus->customer_username = $request->customer_username;
-
         $cus->email = $request->email;
-
         $cus->customer_phone = $request->customer_phone;
-        // if ($request->status) {
-        //     $cus->status = 1;
-        // } else {
-        //     $cus->status = 0;
-        // }
         $cus->save();
         Toastr::success('Success', 'Chỉnh sửa thông tin thành công!');
         return back();

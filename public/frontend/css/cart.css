@@ -324,6 +324,15 @@
     outline: 0;
 }
 
+.cart__button.disabled{
+    background-color: var(--primary-red);
+    opacity: 0.6;
+}
+.cart__button.disabled:hover{
+    background-color: var(--primary-red);
+    opacity: 0.6;
+}
+
 /* ==========  cart check payment ===============*/
 
 .cart__attribute{
