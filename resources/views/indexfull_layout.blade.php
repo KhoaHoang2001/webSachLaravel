@@ -35,28 +35,21 @@
                         <li class="navbar__item navbar_logo"><a href="#" class="navbar__link">BookGarden</a></li>
                     </ul>
                     <?php
-                        $shipping_id = Session::get('shipping_id');
+                        // $shipping_id = Session::get('shipping_id');
                     ?>
                     @guest('customer')
-                    @if (Route::has('loginregis'))
-                    <ul class="navbar__list">
-                      
-                        <li class="navbar__item"><a href="{{URL::to('/signInSignUp')}}" class="navbar__link">Đăng nhập</a></li>
-                        <li class="navbar__item"><a href="{{URL::to('/signInSignUp')}}" class="navbar__link">Đăng ký</a></li>
-
-                    </ul>
-                        @endif
-                        @else
-    
+                        {{-- @if (Route::has('loginregis')) --}}
                         <ul class="navbar__list">
-                        <li class="navbar__item"><a href="{{URL::to('/logout-customer')}}" class="navbar__link">Đăng xuất</a></li>
-                        <li class="navbar__item"><a href="{{URL::to('/accountInfo')}}/{{ auth('customer')->user()->customer_id }}" class="navbar__link">{{ auth('customer')->user()->customer_name }}</a></li>
-                        <li class="navbar__item"><a href="{{URL::to('/historyOrder')}}/{{ auth('customer')->user()->customer_id }}" class="navbar__link">Kiểm tra đơn hàng</a></li>
-                       
-                    </ul>
-                      
-                      @endguest   
-                   
+                            <li class="navbar__item"><a href="{{URL::to('/signInSignUp')}}" class="navbar__link">Đăng nhập</a></li>
+                        </ul>
+                        {{-- @endif --}}
+                    @else
+                        <ul class="navbar__list">
+                            <li class="navbar__item"><a href="{{URL::to('/logout-customer')}}" class="navbar__link">Đăng xuất</a></li>
+                            <li class="navbar__item"><a href="{{URL::to('/accountInfo')}}/{{ auth('customer')->user()->customer_id }}" class="navbar__link">{{ auth('customer')->user()->customer_name }}</a></li>
+                            <li class="navbar__item"><a href="{{URL::to('/historyOrder')}}/{{ auth('customer')->user()->customer_id }}" class="navbar__link">Kiểm tra đơn hàng</a></li>
+                        </ul>
+                    @endguest   
                 </div>
             </nav>
 

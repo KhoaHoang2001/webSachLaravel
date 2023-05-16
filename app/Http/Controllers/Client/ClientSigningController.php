@@ -24,14 +24,14 @@ class ClientSigningController extends Controller
     {
 
         // validate form fields
-        $request->validate([
-            'customer_name' => 'required',
-            'customer_username' => 'required|unique:tbl_customer,customer_username',
-            'email' => 'required|email|unique:tbl_customer,email',
-            'password' => 'required|min:8|max:32',
-            'confirm_password' => 'required|same:password',
-            'customer_phone' => 'required|numeric|digits:10'
-        ]);
+        // $request->validate([
+        //     'customer_name' => 'required',
+        //     'customer_username' => 'required|unique:tbl_customer,customer_username',
+        //     'email' => 'required|email|unique:tbl_customer,email',
+        //     'password' => 'required|min:8|max:32',
+        //     'confirm_password' => 'required|same:password',
+        //     'customer_phone' => 'required|numeric|digits:10'
+        // ]);
 
 
         // if validation success then create an input array
@@ -71,13 +71,15 @@ class ClientSigningController extends Controller
     public function logincustomer(Request $request)
     {
         
-
         $request->validate([
-            'email' => 'required|email|exists:tbl_customer,email',
-            'password' => 'required|min:8|max:32'
-        ], [
             'email.exists' => 'Email naỳ không tồn taị'
         ]);
+        // $request->validate([
+        //     'email' => 'required|email|exists:tbl_customer,email',
+        //     'password' => 'required|min:8|max:32'
+        // ], [
+        //     'email.exists' => 'Email naỳ không tồn taị'
+        // ]);
 
         $creds = $request->only('email', 'password');
 

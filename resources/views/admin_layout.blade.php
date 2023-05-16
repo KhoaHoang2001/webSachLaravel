@@ -95,14 +95,7 @@
     <div class="sidebar sidebar-dark sidebar-fixed" id="sidebar">
       <div class="sidebar-brand d-none d-md-flex">
         <img width="90px" src="{{asset('backend/assets/img/logo2.png')}}" alt="">
-        {{-- <svg class="sidebar-brand-full" width="118" height="46" alt="CoreUI Logo">
-          <use xlink:href="{{asset('backend/assets/brand/coreui.svg#full')}}"></use>
-        </svg>
-        <svg class="sidebar-brand-narrow" width="46" height="46" alt="CoreUI Logo">
-          <use xlink:href="{{asset('backend/assets/brand/coreui.svg#signet')}}"></use>
-        </svg> --}}
       </div>
-      
 
       <!-- Thanh menu bên trái -->
       <ul class="sidebar-nav" data-coreui="navigation" data-simplebar="">
@@ -177,34 +170,6 @@
             <li class="nav-item"><a class="nav-link" href="{{URL::to('/admin/all-order')}}"><span class="nav-icon"></span>Danh sách đơn hàng</a></li>     
           </ul>
         </li>
-
-        <!-- Thống kê -->
-        {{-- <li class="nav-item"><a class="nav-link" href="{{ URL::to('/admin/logout') }}">
-            <svg class="nav-icon">
-              <use xlink:href="{{asset('backend/vendors/@coreui/icons/svg/free.svg#cil-account-logout')}}"></use>
-            </svg>Đăng xuất</a></li> --}}
-
-
-{{-- <!--         
-        <li class="nav-item"><a class="nav-link" href="widgets.html">
-            <svg class="nav-icon">
-              <use xlink:href="{{('backend/vendors/@coreui/icons/svg/free.svg#cil-calculator')}}"></use>
-            </svg> Widgets<span class="badge badge-sm bg-info ms-auto">NEW</span></a></li>
- --> --}}
-
-       
-
-
-        {{-- <li class="nav-item mt-auto"><a class="nav-link" href="https://coreui.io/docs/templates/installation/" target="_blank">
-            <svg class="nav-icon">
-              <use xlink:href="{{asset('backend/vendors/@coreui/icons/svg/free.svg#cil-description')}}"></use>
-            </svg> Docs</a></li>
-        <li class="nav-item"><a class="nav-link nav-link-danger" href="https://coreui.io/pro/" target="_top">
-            <svg class="nav-icon">
-              <use xlink:href="{{asset('backend/vendors/@coreui/icons/svg/free.svg#cil-layers')}}"></use>
-            </svg> Try CoreUI
-            <div class="fw-semibold">PRO</div>
-          </a></li> --}}
       </ul>
       
     </div>
@@ -226,7 +191,9 @@
           <!-- drop down user menu -->
           <ul class="header-nav ms-3">
             <li class="nav-item dropdown"><a class="nav-link py-0" data-coreui-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-                <div class="avatar avatar-md"><img class="avatar-img" src="{{asset('backend/assets/img/avatars/8.jpg')}} " alt="user@email.com"></div>
+                {{-- <div class="avatar avatar-md">tên nhân viên</div> --}}
+                <div class="avatar avatar-md">{{ auth('admin')->user()->admin_name }}</div>
+
               </a>
               <div class="dropdown-menu dropdown-menu-end pt-0">
                 <div class="dropdown-header bg-light py-2">
