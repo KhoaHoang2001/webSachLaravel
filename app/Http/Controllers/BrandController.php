@@ -114,6 +114,6 @@ class BrandController extends Controller
         } else {
             $brand = Brand::orderBy('created_at', 'DESC')->paginate(5);
         }
-        return view('admin.all_brand')->with('brand', $brand);
+        return view('admin.all_brand')->with('brands', $brand);
     }
 }
