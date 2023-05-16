@@ -8,7 +8,12 @@
           <div class="card mb-4">
             <div class="card-header"><strong>Danh sách</strong><span class="small ms-1">Khách hàng</span></div>
             <div class="card-body">
-            <a href="{{URL::to('/admin/add-customer')}}" class="btn btn-primary active" aria-pressed="true" style="background-color: green; float:right; border: black">Thêm khách hàng</a>
+            <a href="{{URL::to('/admin/add-customer')}}" 
+              class="btn btn-primary active" 
+              aria-pressed="true" 
+              style="background-color: green; float:right; border: black">
+              Thêm khách hàng
+            </a>
             <form action="{{ route('admin.web.findcustomer') }}" method="GET">
               {{ csrf_field() }}
             {{-- <div class="col-md-4">   --}}
@@ -44,19 +49,14 @@
                         @endphp
                         @foreach ($customers as $key => $customer)
                         <tr>
-                         
                           <th scope="row">{{$id++}}</th>
-                         
                           <td><div class="avatar avatar-md"><img class="avatar-img" src="{{asset('/frontend/img/account/')}}/{{$customer->customer_avatar}}" alt="{{$customer->customer_avatar}}"></div></td>
-                          
                           <td>{{ $customer->customer_username }}</td>
                           <td>{{ $customer->email }}</td>
                           <td>{{ $customer->customer_phone }}</td>
-                          
                           <td style="float: center">
                             <div class="form-check form-switch">
                               <input class="form-check-input" type="checkbox" role="switch" name="changeStatus" onclick="changeStatus({{$customer->customer_id}},{{$customer->status}})" value="{{$customer->status}}" id="flexSwitchCheckChecked" @if($customer->status == 1) checked  @endif>
-                           
                             </div>
                           </td>
                           <td>

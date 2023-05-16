@@ -94,6 +94,7 @@
     <!-- thuong hieu -->
     <div class="sidebar sidebar-dark sidebar-fixed" id="sidebar">
       <div class="sidebar-brand d-none d-md-flex">
+        <img width="90px" src="{{asset('backend/assets/img/logo2.png')}}" alt="">
         {{-- <svg class="sidebar-brand-full" width="118" height="46" alt="CoreUI Logo">
           <use xlink:href="{{asset('backend/assets/brand/coreui.svg#full')}}"></use>
         </svg>
@@ -110,7 +111,19 @@
               <use xlink:href="{{asset('backend/vendors/@coreui/icons/svg/free.svg#cil-speedometer')}}"></use>
             </svg> Dashboard</a></li>
         
-        <li class="nav-title">Components</li>
+        <li class="nav-title">Quản lý</li>
+
+        <!-- Quản lý user -->
+        {{-- Dùng table admin để chứa các tài khoản vào trang admin --}}
+        <li class="nav-group"><a class="nav-link nav-group-toggle" href="#">
+          <svg class="nav-icon">
+            <use xlink:href="{{asset('backend/vendors/@coreui/icons/svg/free.svg#cil-star')}}"></use>
+          </svg>Quản lý nhân viên</a>
+          <ul class="nav-group-items">
+            <li class="nav-item"><a class="nav-link" href="{{URL::to('/admin/all-user')}}"><span class="nav-icon"></span>Danh sách user</a></li>
+            <li class="nav-item"><a class="nav-link" href="{{URL::to('/admin/add-user')}}"><span class="nav-icon"></span>Thêm user</a></li>
+          </ul>
+        </li>
 
         <!-- Quản lý sản phẩm -->
         <li class="nav-group"><a class="nav-link nav-group-toggle" href="#">
@@ -118,23 +131,18 @@
               <use xlink:href="{{asset('backend/vendors/@coreui/icons/svg/free.svg#cil-book')}}"></use>
             </svg> Quản lý sản phẩm</a>
           <ul class="nav-group-items">
-
             <li class="nav-item"><a class="nav-link" href="{{URL::to('/admin/all-product')}}"><span class="nav-icon"></span>Danh sách sản phẩm</a></li>
             <li class="nav-item"><a class="nav-link" href="{{URL::to('/admin/add-product')}}"><span class="nav-icon"></span>Thêm sản phẩm</a></li>
-            
           </ul>
         </li>
-
         <!-- Quản lý NXB -->
         <li class="nav-group"><a class="nav-link nav-group-toggle" href="#">
             <svg class="nav-icon">
               <use xlink:href="{{asset('backend/vendors/@coreui/icons/svg/free.svg#cil-tags')}}"></use>
             </svg>Quản lý NXB</a>
           <ul class="nav-group-items">
-            
             <li class="nav-item"><a class="nav-link" href="{{URL::to('/admin/all-brand')}}"><span class="nav-icon"></span>Danh sách NXB</a></li>
             <li class="nav-item"><a class="nav-link" href="{{URL::to('/admin/add-brand')}}"><span class="nav-icon"></span>Thêm NXB</a></li>
-            
           </ul>
         </li>
 
@@ -144,13 +152,10 @@
               <use xlink:href="{{asset('backend/vendors/@coreui/icons/svg/free.svg#cil-cursor')}}"></use>
             </svg>Quản lý danh mục</a>
           <ul class="nav-group-items">
-            
             <li class="nav-item"><a class="nav-link" href="{{URL::to('/admin/all-category')}}"><span class="nav-icon"></span>Danh sách danh mục</a></li>
             <li class="nav-item"><a class="nav-link" href="{{URL::to('/admin/add-category')}}"><span class="nav-icon"></span>Thêm danh mục</a></li>
-            
           </ul>
         </li>
-
         
             <!--Quản lý khách hàng -->
         <li class="nav-group"><a class="nav-link nav-group-toggle" href="#">
@@ -158,25 +163,10 @@
               <use xlink:href="{{asset('backend/vendors/@coreui/icons/svg/free.svg#cil-user')}}"></use>
             </svg>Quản lý khách hàng</a>
           <ul class="nav-group-items">
-            
             <li class="nav-item"><a class="nav-link" href="{{URL::to('/admin/all-customer')}}"><span class="nav-icon"></span>Danh sách khách hàng</a></li>
             <li class="nav-item"><a class="nav-link" href="{{URL::to('/admin/add-customer')}}"><span class="nav-icon"></span>Thêm khách hàng</a></li>
-            
           </ul>
         </li>
-
-        <!-- Quản lý user -->
-        {{-- <li class="nav-group"><a class="nav-link nav-group-toggle" href="#">
-            <svg class="nav-icon">
-              <use xlink:href="{{asset('backend/vendors/@coreui/icons/svg/free.svg#cil-star')}}"></use>
-            </svg>Quản lý user</a>
-          <ul class="nav-group-items">
-            
-            <li class="nav-item"><a class="nav-link" href="{{URL::to('/admin/all-user')}}"><span class="nav-icon"></span>Danh sách user</a></li>
-            <li class="nav-item"><a class="nav-link" href="{{URL::to('/admin/add-user')}}"><span class="nav-icon"></span>Thêm user</a></li>
-            
-          </ul>
-        </li> --}}
 
         <!-- Quản lý đơn hàng -->
         <li class="nav-group"><a class="nav-link nav-group-toggle" href="#">

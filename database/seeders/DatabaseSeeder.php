@@ -40,6 +40,12 @@ class DatabaseSeeder extends Seeder
                 'password' => bcrypt('1234'),
                 'admin_phone' => '070123456',
 
+            ],
+            [
+                'admin_name' => 'Kiami Chau',
+                'email' => 'kiamichau@gmail.com',
+                'password' => bcrypt('1234'),
+                'admin_phone' => '0794690384',
             ]
         ]);
 

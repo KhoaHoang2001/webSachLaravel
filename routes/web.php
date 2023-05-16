@@ -179,6 +179,11 @@ Route::prefix('admin')->name('admin.')->group(function () {
         //QL user
         Route::get('/all-user', [UserController::class, 'index']);
         Route::get('/add-user', [UserController::class, 'add_user']);
+        Route::post('/adduser', [UserController::class, 'add_user_button'])->name('checkadduser');
+        Route::get('/edit-user/{admin_id}', [UserController::class, 'getedituser']);
+        Route::post('postedituser', [UserController::class, 'postedituser']);
+        Route::get('/delete-user/{admin_id}', [UserController::class, 'deleteuser']);
+        Route::get('/finduser', [UserController::class, 'finduser'])->name('web.finduser');
 
         //QL đơn hàng
         Route::get('/all-order', [OrderController::class, 'index']);

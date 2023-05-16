@@ -91,32 +91,8 @@ class CustomerController extends Controller
             'email' => 'required|email|unique:tbl_customer,email',
             'password' => 'required|min:8|max:32',
             'avatar' => 'required',
-            'customer_phone' => 'required|numeric|digits:10|regex:/^(09[0-9\s\-\+\(\)]*)$/'
+            'customer_phone' => 'required|numeric'
         ]);
-
-        // $input = $request->all();
-
-        // if validation success then create an input array
-        // $inputArray = array(
-        //     'customer_name' => $request->customer_name,
-        //     'customer_username' => $request->customer_username,
-        //     'customer_email' => $request->customer_email,
-        //     'customer_password' => Hash::make($request->customer_password),
-        //     'customer_phone' => $request->customer_phone
-        // );
-
-        // // register user
-        // $customer = Customer::create($inputArray);
-
-        // // if registration success then return with success message
-        // if (!is_null($customer)) {
-        //     return back()->with('success', 'Tao thành công.');
-        // }
-
-        // // else return with error message
-        // else {
-        //     return back()->with('error', 'Whoops! some error encountered. Please try again.');
-        // }
 
         $cus = new Customer();
         if ($request->hasFile('avatar')) {
