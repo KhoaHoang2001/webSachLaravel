@@ -21,6 +21,7 @@ class ClientCartController extends Controller
 {
     public function index()
     {
+        Cart::setGlobalTax(0);
         //header, home
         $categoryASC = Category::orderBy('category_id', 'ASC')->where('status', 1)->get();
         $brandASC = Brand::orderBy('brand_id', 'ASC')->get();

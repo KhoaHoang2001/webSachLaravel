@@ -96,10 +96,10 @@
                                 
                             </div> --}}
                             <div class="cart__prices cart__box">
-                                <div class="cart-prices__box">
+                                {{-- <div class="cart-prices__box">
                                     <span>Thue</span>
                                     <p class="cart-prices__before">{{Cart::tax().' '.'vnđ'}}</p>
-                                </div>
+                                </div> --}}
 
                                 <div class="cart-prices__box">
                                     <span>Tổng tiền</span>

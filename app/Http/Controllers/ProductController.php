@@ -177,7 +177,7 @@ class ProductController extends Controller
         $product = Product::find($product_id);
         $product->status = $status;
         $product->save();
-        return response()->json(['status' => 'success', 'trangthai' => $cus->status]);
+        return response()->json(['status' => 'success', 'trangthai' => $product->status]);
     }
     function findproduct(Request $request)
     {
