@@ -31,13 +31,13 @@ class ClientController extends Controller
         ->orderBy('product_id', 'DESC')->limit(4)->get();
         //Theo nhà xuất bản
         $productBrand1 = Product::with('category')->with('brand')->where('status', 1)
-        ->where('brand_id', 1)
+        ->where('brand_id', 4)
         ->orderBy('created_at', 'ASC')->limit(8)->get();
         //Theo loại sách
         $productCate1 = Product::with('category')->with('brand')
         ->where('status', 1)->where('product_featured', 1)
-        ->where('category_id', 1)
-        ->orderBy('created_at', 'ASC')->limit(8)->get();
+        ->where('category_id', 8)
+        ->orderBy('created_at', 'ASC')->limit(4)->get();
 
         return view('client.home')->with(compact(
             'categoryASC',

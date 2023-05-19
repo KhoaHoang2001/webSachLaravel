@@ -18,7 +18,7 @@ class CreateTblProductTable extends Migration
             $table->integer('brand_id')->unsigned();
             $table->integer('category_id')->unsigned();
             $table->string('product_name');
-            $table->string('product_content');
+            $table->text('product_content');
             $table->double('product_price');
             $table->string('product_author');
             $table->string('product_img');
