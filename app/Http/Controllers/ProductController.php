@@ -31,7 +31,6 @@ class ProductController extends Controller
                 'product_name' => 'required|unique:tbl_product|max:255',
                 'product_author' => 'required|max:255',
                 'product_content' => 'required|max:255',
-                //'image' => 'required   |image|mimes:jpeg,png,jpg,gif,svg|max:2048|dimensions:min_width=100&dimensions=min_height=100,max_width=1000,max_height=1000',
                 'product_img' => 'required',
                 'product_brand' => 'required',
                 'product_category' => 'required',
@@ -39,11 +38,8 @@ class ProductController extends Controller
                 'product_price' => 'required',
                 'product_brand' => 'required',
                 'product_category' => 'required',
-
             ],
-
         );
-
         $product = new Product();
         if ($request->product_featured) {
             $product->product_featured = 1;
@@ -55,8 +51,6 @@ class ProductController extends Controller
         } else {
             $product->status = 0;
         }
-
-        //$product->product_name = $request->product_name;
         $product->product_name = $data['product_name'];
         $product->product_content = $data['product_content'];
         $product->product_price = $data['product_price'];
@@ -64,19 +58,13 @@ class ProductController extends Controller
         $product->brand_id = $data['product_brand'];
         $product->category_id = $data['product_category'];
         // them sach truyen
-        // $get_image = $data['image'];
         if ($request->hasFile('product_img')) {
             $file = $request->file('product_img');
             $filename = $file->getClientOriginalName('product_img');
             $file->move('frontend/img/products', $filename);
             $product->product_img = '' . $filename;
-            //$product->product_img =  $filename;
         }
-
         $product->product_quantity = $data['product_quantity'];
-        //$product->product_featured = $data['product_featured'];
-        //$product->status = $data['status'];
-
         $product->save();
         Toastr::success('Success', 'Thêm sản phẩm thành công!');
         return redirect('admin/all-product');

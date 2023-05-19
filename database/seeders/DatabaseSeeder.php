@@ -112,8 +112,6 @@ class DatabaseSeeder extends Seeder
         // // =================================== TẠO DỮ LIỆU CHO PRODUCT ==============================================
 
         DB::table('tbl_product')->insert([
-            
-            
             [
                 'product_name' => 'The Beauty Within',
                 'brand_id' => '2',

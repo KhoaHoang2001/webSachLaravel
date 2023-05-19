@@ -113,8 +113,8 @@
             <use xlink:href="{{asset('backend/vendors/@coreui/icons/svg/free.svg#cil-star')}}"></use>
           </svg>Quản lý nhân viên</a>
           <ul class="nav-group-items">
-            <li class="nav-item"><a class="nav-link" href="{{URL::to('/admin/all-user')}}"><span class="nav-icon"></span>Danh sách user</a></li>
-            <li class="nav-item"><a class="nav-link" href="{{URL::to('/admin/add-user')}}"><span class="nav-icon"></span>Thêm user</a></li>
+            <li class="nav-item"><a class="nav-link" href="{{URL::to('/admin/all-user')}}"><span class="nav-icon"></span>Danh sách nhân viên</a></li>
+            <li class="nav-item"><a class="nav-link" href="{{URL::to('/admin/add-user')}}"><span class="nav-icon"></span>Thêm nhân viên</a></li>
           </ul>
         </li>
 

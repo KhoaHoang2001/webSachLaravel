@@ -65,8 +65,11 @@ Route::get('/brand', [ClientController::class, 'viewAllProduct']);
 
 
 Route::get('/', [ClientController::class, 'index'])->name('/');
+
 //Giỏ hàng
 Route::get('/cart', [ClientCartController::class, 'index']);
+
+
 Route::post('/update-cart-quantity', [ClientCartController::class, 'update_cart_quantity']);
 // Route::post('/update-cart', [ClientCartController::class], 'update_cart');
 Route::post('/save-cart', [ClientCartController::class, 'save_cart']);
@@ -91,8 +94,8 @@ Route::get('/delete-to-cart/{rowId}', [ClientCartController::class, 'delete_to_c
 
 
 Route::middleware(['guest:customer'])->group(function () {
-
-    Route::get('/signInSignUp', [ClientSigningController::class, 'index'])->name('loginregis');
+    Route::get('/signInSignUp', [ClientSigningController::class, 'index'])
+    ->name('loginregis');
     Route::post('/registercustomer', [ClientSigningController::class, 'registercustomer'])->name('checkregis');
     Route::post('/login-customer', [ClientSigningController::class, 'logincustomer']);
 });
@@ -106,11 +109,15 @@ Route::middleware(['auth:customer'])->group(function () {
     Route::post('/order_save', [ClientPaymentController::class, 'order_save']);
 
     Route::get('/accountPasswordChange/{customer_id}', [ClientAccountController::class, 'passwordChange']);
+
     Route::get('/accountInfo/{customer_id}', [ClientAccountController::class, 'index']);
+
     // Route::get('/savechange', [ClientAccountController::class, 'savechange']);
+    
     Route::post('/savechange', [ClientAccountController::class, 'savechange']);
-    Route::get('/logout-customer', [ClientSigningController::class, 'logoutcustomer']);
     Route::post('/savechangepassword', [ClientAccountController::class, 'savechangepassword']);
+
+    Route::get('/logout-customer', [ClientSigningController::class, 'logoutcustomer']);
     //Thông báo thanh toán thành công
     Route::get('/successpayment', [ClientPaymentController::class, 'success']);
     Route::get('/checkpayment', [ClientPaymentController::class, 'check']);

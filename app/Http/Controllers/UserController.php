@@ -15,7 +15,6 @@ class UserController extends Controller
         $users = Admin::orderBy('created_at', 'DESC')->paginate(5); //instead SQL select * from categories
         return view('admin.all_user')->with('users', $users);
     }
-
     public function add_user()
     {
         return view('admin.add_user');
@@ -25,6 +24,7 @@ class UserController extends Controller
         $user = Admin::find($user_id);
         return view('admin.edit_user', ['user' => $user]);
     }
+
     public function deleteuser($user_id)
     {
         $user = Admin::find($user_id);
@@ -32,6 +32,7 @@ class UserController extends Controller
         Toastr::success('Success', 'Xóa thành công!');
         return redirect('admin/all-user');
     }
+
     public function postedituser(Request $request)
     {
         $user = Admin::find($request->user_id);
@@ -40,11 +41,10 @@ class UserController extends Controller
         $user->password = \Hash::make($request->password);
         $user->admin_phone = $request->user_phone;
         $user->save();
-        // Alert::success('Success Title', 'Success Message');
         Toastr::success('Success', 'Chỉnh sửa thành công!');
-        // @include('sweetalert::alert')
         return redirect('admin/all-user');
     }
+
     public function add_user_button(Request $request)
     {
         $request->validate([
@@ -60,9 +60,9 @@ class UserController extends Controller
         $user->admin_phone = $request->user_phone;
         $user->save();
         Toastr::success('Success', 'Thêm user thành công!');
-        // @include('sweetalert::alert')
         return redirect('admin/all-user');
     }
+
     function finduser(Request $request)
     {
         $search = $request->get('search_query');

@@ -35,25 +35,21 @@ class ClientAccountController extends Controller
         $brandASC = Brand::orderBy('brand_id', 'ASC')->get();
 
         $cus = Customer::find($request->customer_id);
-
         return view('client.accountPasswordChange', ['customer' => $cus])->with(compact(
             'categoryASC',
             'brandASC',
         ));
     }
+
     public function savechange(Request $request)
     {
-        // alert($request->account_avatar);
         $cus = Customer::find($request->customer_id);
         if ($request->hasFile('account_avatar')) {
-            // alert('alo');
             $file = $request->file('account_avatar');
             $filename = $file->getClientOriginalName('account_avatar');
-            // $filename = $request->account_avatar;
             $file->move('frontend/img/account', $filename);
             $cus->customer_avatar = '' . $filename;;
         }
-
         $cus->customer_name = $request->customer_name;
         $cus->customer_username = $request->customer_username;
         $cus->email = $request->email;
@@ -62,23 +58,17 @@ class ClientAccountController extends Controller
         Toastr::success('Success', 'Chỉnh sửa thông tin thành công!');
         return back();
     }
+
     public function savechangepassword(Request $request)
     {
         $request->validate([
-
             'new_password' => 'required|min:8|max:32',
             'new_passwordConfirm' => 'required|same:new_password',
-
         ]);
-
         Alert::success('Đăng nhập thành công', 'Bạn giờ đây có thể mua hàng.');
         $cus = Customer::find($request->customer_id);
-
         $cus->password = \Hash::make($request->new_password);
-
-
         $cus->save();
-
         return back();
     }
 
