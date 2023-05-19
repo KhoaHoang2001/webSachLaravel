@@ -127,12 +127,10 @@
                                                     </div>
                                                     <i class="header-dropdown__link-icon fa-solid fa-caret-right"></i>
                                                 </a>
-                                               
                                             </li>  
                                             @endif 
                                         @endforeach 
                                     </ul>
-                                    
                                 </div>
                             </div>
 

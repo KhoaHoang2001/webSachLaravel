@@ -39,19 +39,18 @@
                     </h2>
                     <div class="classify__products">
                         <div class="row">
-                            <!-- dùng bootstrap để tự nó chia đề layout ra
-                                mỗi div col-3 chứa 1 sản phẩm
-                                muốn có nhiều sản phẩm thì copy col-3 -->
                             @foreach ($productCate1 as $key => $value) 
-                            @if ($value->status == 1 && $value->product_featured==1 && $value->category->status == 1 && $value->brand->brand_status == 1)
-                                
-                           
+                            @if ($value->status == 1 
+                            && $value->product_featured==1 
+                            && $value->category->status == 1 
+                            && $value->brand->brand_status == 1)
+                            <!-- 1 sản phẩm (trong div classify__product) -->
                             <div class="col-3">
-                                <!-- 1 sản phẩm (trong div classify__product) -->
                                 <a href="{{url('pDetail/' . $value->product_id)}}" class="classify__linkproduct">
                                     <div class="classify__product">
                                         <div class="classify-product__box"> <!-- chứa các thẻ hình -->
-                                            <img src="{{asset('/frontend/img/products')}}/{{$value->product_img}}" alt="" class="classify-product__img">
+                                            <img src="{{asset('/frontend/img/products')}}/{{$value->product_img}}" 
+                                            alt="" class="classify-product__img">
                                         </div>
                                         <div class="classify-product__info"> <!-- chứa các thẻ thông tin -->
                                             <p class="classify-product__title">{{$value->product_name}}</p>
@@ -65,11 +64,7 @@
                             </div>
                             @endif
                             @endforeach
-                            
-                            
-                            
                         </div>
-                        
                     </div>
                 </div>
             </div>

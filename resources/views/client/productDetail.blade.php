@@ -19,8 +19,6 @@
                         <input type="hidden" value="{{$product->product_id}}" class="cart_product_name_{{$product->product_id}}">
                         <div class="detail__info">
                             <h2 class="detail-info__title">{{$product->product_name}}</h2>
-                           
-            
                             <div class="detail-info__box">
                                 <span>Tác giả:</span>
                                 <input type="hidden" value="{{$product->product_author}}">

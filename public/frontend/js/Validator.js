@@ -2,7 +2,6 @@
 function Validator(options){
 
 var selectorRules = {};
-
     function validate(inputEle, rule){
         let rules = selectorRules[rule.selector];
         
@@ -16,7 +15,6 @@ var selectorRules = {};
                 break;
             }
         }
-
         if(errorMessage) {
             mesEle.innerHTML = errorMessage;
             parentEle.classList.add('form-invalid')
@@ -25,7 +23,6 @@ var selectorRules = {};
             parentEle.classList.remove('form-invalid')
         }  
     }
-
      let formEle = document.querySelector(options.form);
      if(formEle){
 
@@ -36,21 +33,17 @@ var selectorRules = {};
                 validate(inputEle, rule);
             });
         }
-
         options.rules.forEach(function(rule){
-
             if(Array.isArray(selectorRules[rule.selector])){
                 selectorRules[rule.selector].push(rule.test);
             }else{
                 selectorRules[rule.selector] = [rule.test];
             }
-
             let inputEle = formEle.querySelector(rule.selector);
             if(inputEle){
                 inputEle.onblur = function(){
                     validate(inputEle, rule);
                 }
-
                 inputEle.oninput = function(){
                     validate(inputEle, rule);
                 }

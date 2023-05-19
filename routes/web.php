@@ -44,17 +44,21 @@ Auth::routes();
 //Chi tiết sản phẩm
 Route::get('/pDetail/{product_id}', [ClientController::class, 'viewProduct']);
 
-//Hiển thị những sản phẩm theo danh mục
-Route::get('/category/{category_id}', [ClientController::class, 'viewOnCategory']);
+
 
 Route::get('/categorySelling', [ClientController::class, 'viewAllProduct']);
+
 Route::get('/search', [ClientController::class, 'search']);
 Route::get('/category/search', [ClientController::class, 'search']);
 Route::get('/category/{category_id}/search', [ClientController::class, 'search']);
 
-Route::get('/brand', [ClientController::class, 'viewAllProduct']);
-Route::get('/brand/{category_id}', [ClientController::class, 'viewOnBrand']);
+//Hiển thị những sản phẩm theo danh mục
+Route::get('/category/{category_id}', [ClientController::class, 'viewOnCategory']);
+//Hiển thị những sản phẩm theo NXB
+Route::get('/brand/{brand_id}', [ClientController::class, 'viewOnBrand']);
 
+
+Route::get('/brand', [ClientController::class, 'viewAllProduct']);
 // Route::get('/category', [ClientSellingController::class, 'index']);
 
 //Thông tin cá nhân

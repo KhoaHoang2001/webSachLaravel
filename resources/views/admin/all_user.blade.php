@@ -5,12 +5,12 @@
         <div class="container-lg">
           <div class="car"></div>
           <div class="card mb-4">
-            <div class="card-header"><strong>Danh sách</strong><span class="small ms-1">User</span></div>
+            <div class="card-header"><strong>Danh sách</strong><span class="small ms-1">nhân viên</span></div>
             <div class="card-body">
               <a href="{{URL::to('/admin/add-user')}}" 
                 class="btn btn-primary active" 
                 aria-pressed="true" 
-                style="background-color: green; float:right">Thêm user</a>
+                style="background-color: green; float:right">Thêm tài khoản</a>
             <form action="{{ route('admin.web.finduser') }}" method="GET">
               {{ csrf_field() }}
               <div class="input-group mb-3" style="width: 450px">

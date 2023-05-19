@@ -68,6 +68,7 @@ class ClientCartController extends Controller
         Toastr::error('Error', 'Không thể mua thêm nữa!');
         return back();
     }
+    
     public function show_cart()
     {
         //seo 
